@@ -73,3 +73,214 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+### `Card` VS `Container`
+Container példa
+```Java
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(
+    MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.teal,
+          body:
+            Column(
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage('https://lh3.googleusercontent.com/ogw/ADGmqu-5GqtuL3_piw_wxvSJ_z241CUdyGsHHDJ053AV=s32-c-mo'),
+                  backgroundColor: Colors.orange,
+                ),
+                Text(
+                  'Sándor Burian',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Pacifico',
+                  ),
+                ),
+                Text(
+                  'FLUTTER DEVELOPER',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.teal.shade100,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Source Sans Pro',
+                    letterSpacing: 2.5,
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 25
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.phone,
+                        color: Colors.teal,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '+123456789',
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 25
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.mail,
+                        color: Colors.teal,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'my@mail.address',
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Kártyás példa:
+```Java
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(
+    MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.teal,
+          body:
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage('https://lh3.googleusercontent.com/ogw/ADGmqu-5GqtuL3_piw_wxvSJ_z241CUdyGsHHDJ053AV=s32-c-mo'),
+                  backgroundColor: Colors.orange,
+                ),
+                Text(
+                  'Sándor Burian',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Pacifico',
+                  ),
+                ),
+                Text(
+                  'FLUTTER DEVELOPER',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.teal.shade100,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Source Sans Pro',
+                    letterSpacing: 2.5,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                  width: 150,
+                  child: Divider(
+                    color: Colors.teal.shade100,
+                  ),
+                ),
+                Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 25
+                  ),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      '+123456789',
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 25
+                  ),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.mail,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'my@mail.address',
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+        ),
+      ),
+    );
+  }
+}
+```
