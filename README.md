@@ -4,6 +4,7 @@
 ## Tartalom:
 - [i am rich app](https://github.com/gabboraron/Flutter_appfejlesztes/tree/master/i_am_rich) az itt találató leírás alapján: https://www.appbrewery.co/courses/851555/lectures/15448514
 - [i am poor app](https://github.com/gabboraron/Flutter_appfejlesztes/tree/master/i_am_poor) az ellentéte az [i am rich app](https://github.com/gabboraron/Flutter_appfejlesztes/tree/master/i_am_rich)-nak, azaz amit tudtam megváltoztattam
+- [Sorok és oszlopok a `SafeArea`-n belül](https://github.com/gabboraron/Flutter_appfejlesztes/wiki/Sorok-&-Oszlopok)
 ----
 > doksi: https://flutter.dev/docs/
 
