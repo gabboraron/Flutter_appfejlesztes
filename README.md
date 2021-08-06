@@ -10,13 +10,64 @@ Teljes anyag: https://github.com/londonappbrewery/Flutter-Course-Resources
 ----
 > doksi: https://flutter.dev/docs/
 
+### `.yaml` fájl beállítása
+> kommentelés `#` sorkezdéssel
+> 
+> **számít a whitespace!** Egy bekezdés két space hosszú!
+>
+> Módosítás után `Pub get` kell!
+>
+> adhatunk fájlokat `- images/diamond.png` vagy mappákat `- images/`  mint hozzárendelt anyag
+
+```yaml
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/diamond.png
+```
+
+
+
+
+### Desktop támogatás
+> - [Add desktop support to an existing Flutter app](https://flutter.dev/desktop#add-desktop-support-to-an-existing-flutter-app)
+> - [Build and release a Linux app to the Snap Store](https://flutter.dev/docs/deployment/linux)
+> 
+> A projekt generálásakor bállíŧhatjuk, hogy adott desktopra is generáljon desktop appot vagy chrome appot is akár.
+
+### Hello world
+```Dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Center(
+        child: Text('Hi World'),
+      ),
+    ),
+  );
+}
+```
+
 ### Ikonok beállítása:
-#### android
-> `android`>`app`>`src`>`main`>`res`
-#### iOS
-> `ios`>`Runner`>`Assets.xcassets`
+1. megadott képből ikonszettet generálunk itt: https://appicon.co/
+2. android
+   > `android`>`app`>`src`>`main`>`res` itt a `mipmap` kezdetű mappák lecserélése arra amit generáltunk
+3. iOS
+   > `ios`>`Runner`>`Assets.xcassets`
+4. web
+   > `web`>`favicon.png`
+5. linux
+   > jelenleg nem ismert, esetleg itt lesz ebből valami: https://github.com/flutter/flutter/issues/53229
+
 - ikonok innen ingyen: https://icons8.com
 - app képernyőikon méretező: https://appicon.co/
+
+> Ha Az ikon alakján akarunk változtatni (kör, négyzet vagy valamilyen háttérforma) akkor *`jobb klikk res mappán`>`new`>`Image Asset` beadva a kép helyét a `path`ba* kiválogathatjuk vagy állíŧhatjuk  ahogy szeretnénk, aztán `Next`>`Finish`
+-------
 
 ### Sorok/oszlopok/konténerek elrendezése:
 A következő példa kódja ([`SafeArea`](https://api.flutter.dev/flutter/widgets/SafeArea-class.html)n belül):
