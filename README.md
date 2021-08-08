@@ -38,6 +38,17 @@ flutter:
 > A projekt generálásakor bállíŧhatjuk, hogy adott desktopra is generáljon desktop appot vagy chrome appot is akár.
 
 ### Hello world
+Az alap program:
+```Dart
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(
+    //program törzse
+  );
+}
+```
+
 ```Dart
 import 'package:flutter/material.dart';
 
